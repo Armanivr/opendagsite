@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <script src="js/main.js"></script>
+    <style>
+
+    </style>
+    <title>Curio</title>
+</head>
+<body>
+    <header>
+        <div class="buttonDiv">
+            <div class="imageLogo">
+                <img src="resources/img/curio_logo_light_pink.png" alt="curio">
+            </div>
+            <div class="mainBar" id="mainBar">
+                <img class="openBtn" onclick="openNav()" src="resources/icons/MenuLightPink.ico" alt="menu icon">
+                <p style="color: #f8a0bc;">menu</p>
+            </div>
+        </div>
+        <div id="myNav" class="overlay">
+            <img class="closeBtn" onclick="closeNav()" src="resources/icons/CloseWhite.ico" alt="close">
+        
+            <div class="overlayContent">
+                <div class="sectionBlock" style="background-color: #004933; margin-top: 20px;">
+                    <a style="color:#ffcc00 ;" href="index.html">Thuispagina</a>
+                    <img src="resources/icons/UpRightYellow.ico" alt="icon">
+                </div>
+                <div class="sectionBlock" style="background-color: #ffcc00;">
+                    <a style="color:#004933 ;" href="meet.html">Maak Kennis</a>
+                    <img src="resources/icons/UpRightGreen.ico" alt="icon">
+                </div>
+                <div class="sectionBlock" style="background-color: #004933;">
+                    <a style="color:#ffcc00" href="yourExperience.html">Jouw Ervaring</a>
+                    <img src="resources/icons/UpRightYellow.ico" alt="icon" >
+                </div>
+                <div class="sectionBlock" style="background-color: #ffcc00;" onclick="window.location.href='#contact'">
+                    <a style="color:#004933" onclick="lightUp()">Contact</a>
+                    <script>
+                        function lightUp() {
+                            const h1Element = document.querySelector('.textBox2 h1');
+                            setTimeout(() =>{
+                                h1Element.style.transition = 'color 0.3s ease';
+                                h1Element.style.color = '#f7b8cc';
+                            }, 900)
+                            setTimeout(() => {
+                                h1Element.style.color = '#f8a0bc';
+                            }, 2000);
+                        }
+                    </script>
+                    <img src="resources/icons/UpRightGreen.ico" alt="icon">
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+
+        <div class="videoContainer">
+            <div class="textDivider">
+                <div class="textBox">
+                    
+                </div>
+            </div>
+            <video id="videoPlayer" src="resources/vid/SD_video.mp4" autoplay muted></video>
+            <div class="continuationDivider">
+                <p></p>
+            </div>
+        </div>
+        <div id="section1" class="imageAndText">
+            <div class="text">
+                <h4>Versnellen, hoe werkt dat?</h4>
+                <p>De opleidingsduur is 4 jaar, maar je krijgt in het eerste half jaar de kans om het
+                    versnellingstraject te volgen. Het versnellingstraject is 3 jaar. 
+                    <p>Je komt in aanmerking om te 
+                    versnellen als je tijdens de lessen goed mee doet en je huiswerk op tijd af hebt. Ook moet je al je
+                    studiepunten hebben.
+                    </p>
+                </p>
+            </div>
+            <img src="resources/img/Opleidingsoverzicht3.png" alt="">
+        </div>
+        <div id="section2" class="imageAndText">
+            <img src="resources/img/Rooster_eerste_leerjaar.png" alt="">
+            <div class="text secondaryText" onclick="window.location.href='yourExperience.html#section2'">
+                <div>
+                    <h4>Rooster</h4>
+                    <h3>Webdevelopment</h3>
+                    <p>Je leert hier de basis van het programmeren en hoe je een website maakt. Je past bij dit vak de talen html, css, javascript, php en sql toe.</p>
+                    <h3>Native</h3>
+                    <p>Je leert hier hoe je apps maakt. Je past bij dit vak de talen c# en python toe. Maar je werkt eerst met Micro:Bits</p>
+                    <h3>Praktijk/Delta</h3>
+                    <p>Je maakt hier verschillende projecten, alleen of met een team. Dit kan voor WEB of voor Native zijn.</p>
+                    <h3>Praktijkondersteuning</h3>
+                    <p>Je leert hier hoe je een project aanpakt en hoe je het beste kan samenwerken.</p>
+                    <h3>Generiek vakken</h3>
+                    <p>Nederlands, Engels, rekenen en digitale vaardigheden.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div id="contact" class="footerContainer2">
+            <div class="textBox2">
+                <img class=textImg2 src="resources/img/curio_logo_light_pink.png" alt="">
+                <p>Curio Breda</p>
+                <p>Software Development</p>
+                <p>Terheijdenseweg 350, Breda</p>
+            </div>
+            <div class="textBox2" id="contact">
+                <h1>Contact</h1>
+                <p class= "clickAble2" onclick="window.location.href='mailto:infopunt@curio.nl'">infopunt@curio.nl</p>
+                <p class="clickAble2" onclick="window.location.href='tel:088-2098000'">088-2098000</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

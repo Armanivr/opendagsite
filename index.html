@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <script src="js/main.js"></script>
+    <style>
+
+    </style>
+    <title>Curio</title>
+</head>
+<body>
+    <header>
+        <div class="buttonDiv">
+            <div class="imageLogo">
+                <img src="resources/img/curio_logo_wit.png" alt="curio">
+            </div>
+            <div class="mainBar" id="mainBar">
+                <img class="openBtn" onclick="openNav()" src="resources/icons/Menu.ico" alt="menu icon">
+                <p style="color: white;">menu</p>
+            </div>
+        </div>
+        <div id="myNav" class="overlay">
+            <img class="closeBtn" onclick="closeNav()" src="resources/icons/CloseWhite.ico" alt="close">
+        
+            <div class="overlayContent">
+                <div class="sectionBlock" style="background-color: #004933; margin-top: 20px;">
+                    <a style="color:#ffcc00 ;" href="index.html">Thuispagina</a>
+                    <img src="resources/icons/UpRightYellow.ico" alt="icon">
+                </div>
+                <div class="sectionBlock" style="background-color: #ffcc00;">
+                    <a style="color:#004933 ;" href="meet.html">Maak Kennis</a>
+                    <img src="resources/icons/UpRightGreen.ico" alt="icon">
+                </div>
+                <div class="sectionBlock" style="background-color: #004933;">
+                    <a style="color:#ffcc00" href="yourExperience.html">Jouw Ervaring</a>
+                    <img src="resources/icons/UpRightYellow.ico" alt="icon" >
+                </div>
+                <div class="sectionBlock" style="background-color: #ffcc00;" onclick="window.location.href='index.html#contact'">
+                    <a style="color:#004933" onclick="lightUp()">Contact</a>
+                    <script>
+                        function lightUp() {
+                            const h1Element = document.querySelector('.textBox h1');
+                            setTimeout(() =>{
+                                h1Element.style.transition = 'color 0.3s ease';
+                                h1Element.style.color = '#038860';
+                            }, 900)
+                            setTimeout(() => {
+                                h1Element.style.color = '#004933';
+                            }, 2000);
+                        }
+                    </script>
+                    <img src="resources/icons/UpRightGreen.ico" alt="icon">
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="underHeader">
+            <img src="resources/img/SD_foto5.jpg" alt="underHeaderPicture">
+        </div>
+        <div class="overPicture">
+            <div class="dividerBox">
+                
+            </div>
+            <div class="textbox">
+                <p>Software Development</p>
+                <p style = "color: #ffcc00;" id="typingEffect"></p>
+                <script>
+                    const texts = ["Webdevelopment", "App Development"];
+                    let textIndex = 0;
+                    let charIndex = 0;
+                    const typingSpeed = 100;
+                    const deletingSpeed = 100; 
+                    const pauseBetweenTexts = 1500; 
+
+                    function type() {
+                        if (charIndex < texts[textIndex].length) {
+                            document.getElementById("typingEffect").innerHTML += texts[textIndex].charAt(charIndex);
+                            charIndex++;
+                            setTimeout(type, typingSpeed);
+                        } else {
+                            setTimeout(deleteText, pauseBetweenTexts);
+                        }
+                    }
+
+                    function deleteText() {
+                        if (charIndex > 0) {
+                            document.getElementById("typingEffect").innerHTML = texts[textIndex].substring(0, charIndex - 1);
+                            charIndex--;
+                            setTimeout(deleteText, deletingSpeed);
+                        } else {
+                            textIndex = (textIndex + 1) % texts.length; 
+                            setTimeout(type, typingSpeed);
+                        }
+                    }
+
+                    type();
+                </script>
+            </div>
+        </div>
+        <div class="containerMain">
+            <div class="informationContainer" onmouseover="this.querySelector('img').src='resources/icons/UpRightYellow.ico'" onmouseout="this.querySelector('img').src='resources/icons/UpRightGreen.ico'">
+                <h3 onclick="window.open('https://www.curio.nl/mbo/techniek-en-technologie/softwaredeveloper/software-developer', '_blank')">Aanmelden</h3>
+                <img src="resources/icons/UpRightGreen.ico" alt="icon">
+            </div>
+            <div class="informationContainer" onmouseover="this.querySelector('img').src='resources/icons/UpRightYellow.ico'" onmouseout="this.querySelector('img').src='resources/icons/UpRightGreen.ico'">
+                <h3 onclick="window.location.href='#section1'">Locatie</h3>
+                <img src="resources/icons/UpRightGreen.ico" alt="icon">
+            </div>
+            <div class="informationContainer" onmouseover="this.querySelector('img').src='resources/icons/UpRightYellow.ico'" onmouseout="this.querySelector('img').src='resources/icons/UpRightGreen.ico'">
+                <h3 onclick="window.location.href='#section2'">Rooster</h3>
+                <img src="resources/icons/UpRightGreen.ico" alt="icon">
+            </div>
+            <div class="informationContainer" onmouseover="this.querySelector('img').src='resources/icons/UpRightYellow.ico'" onmouseout="this.querySelector('img').src='resources/icons/UpRightGreen.ico'">
+                <h3 onclick="window.location.href='#section3'">Versnellen?</h3>
+                <img src="resources/icons/UpRightGreen.ico" alt="icon" >
+            </div>
+        </div>
+        <div id="section1" class="containerImageAndText">
+            <div class="imageAndText">
+                <div class="text">
+                    <h4>Locatie</h4>
+                    <p>Curio Breda is gevestigd aan de Terheijdenseweg 350. Binnen vind je een rustige werkomgeving en grote open lokalen.
+                         Daarnaast is er ook een kantine waar studenten kunnen pauzeren en socializen. Met een bushalte 5 minuten van de school hoef je niet per se een vroege bus te pakken.
+                    </p>
+                    <p>
+
+                    </p>
+                </div>
+                <img src="resources/img/SD_foto4.jpg" alt="">
+            </div>
+            <div id="section2" class="imageAndTextAlt">
+                <img src="resources/img/Rooster_eerste_leerjaar.png" alt="">
+                <div class="text secondaryText" onclick="window.location.href='yourExperience.html#section2'">
+                    <div>
+                        <h4>Rooster eerstejaars</h4>
+                        <p>Dit is een voorbeeld rooster voor de eerstejaars.</p>
+                        <p>
+                            Tijdens de opleiding krijg je de vakken: Nederlands, Engels, En Rekenen.
+                            Daarnaast krijg je ook nog de vakken: Webdevelopment, Native, Praktijk/of Delta en Praktijkondersteuning.
+                        </p>
+                    </div>
+                    <div class="readMoreContainerAlt">
+                        <p>Lees meer</p>
+                    </div>
+                </div>
+            </div>
+            <div id="section3" class="imageAndText">
+                <div class="text secondaryText" onclick="window.location.href='yourExperience.html#section1'">
+                    <div>
+                        <h4>Versnellen?</h4>
+                        <p>Maak van 4 jaar 3 jaar, door het versnellings traject te nemen!</p>
+                    </div>
+                    <div class="readMoreContainer">
+                        <p>Lees meer</p>
+                    </div>
+                </div>
+                <img src="resources/img/Opleidingsoverzicht3.png" alt="">
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div id="contact" class="footerContainer">
+            <div class="textBox">
+                <img class=textImg src="resources/img/curio_logo_groen.png" alt="">
+                <p>Curio Breda</p>
+                <p>Software Development</p>
+                <p>Terheijdenseweg 350, Breda</p>
+            </div>
+            <div class="textBox">
+                <h1>Contact</h1>
+                <p class= "clickAble" onclick="window.location.href='mailto:infopunt@curio.nl'">infopunt@curio.nl</p>
+                <p class="clickAble" onclick="window.location.href='tel:088-2098000'">088-2098000</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

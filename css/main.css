@@ -1,0 +1,742 @@
+*{
+    margin: 0 auto;
+    font-family: Fellix,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-weight: 600;
+}
+
+html{
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+.menuButton{
+    transition: all 0.2s ease-in;
+    opacity: 50%;
+}
+
+.menuButton:hover{
+    cursor:pointer;
+    transition: all 0.2s ease-in;
+    opacity: 100%;
+}
+
+.buttonDiv{
+    z-index: 2;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    height: 100px;
+    left: 0;
+    outline: 0;
+    position: fixed;
+    top: 3px;
+    width: 300px;
+}
+
+.imageLogo{
+    padding: 0;
+    margin: 0;
+}
+
+.imageLogo img{
+   align-self: flex-start;
+    height: 44px;
+    width: 120px;
+} 
+
+
+.mainBar{
+    transition: all 0.2s ease-in;
+    height: min-content;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+}
+
+.mainBar img{
+    transition: all 0.2s ease-in;
+    height: 34px;
+    width: 34px;
+}
+
+.mainBar p{
+    font-size: 1.5em;
+    margin-left: 5px;
+}
+
+.mainBar img:hover{
+    transition: all 0.2s ease-in;
+    height: 40px;
+    width: auto;
+    cursor: pointer;
+    transform: rotate(180deg);
+    .mainBar p{
+        opacity: 20%;
+    }
+}
+/* curtain */
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    background-color: #004933;
+    transition: 0.5s; 
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+    overflow: hidden;
+}
+  
+.overlayContent {
+    top: 5%; 
+    width: 100%;
+    text-align: start;
+    margin-top: 25px; 
+}
+  
+.overlay .sectionBlock a {
+    width: 100%;
+    padding: 100px;
+    text-decoration: none;
+    font-size: 30px;
+    color: #000000;
+    display: block; 
+    transition: 0.3s; 
+    opacity: 80%;
+}
+
+.overlay .sectionBlock{
+    transition: all 0.2s ease-in;
+    top: 5%;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+}
+.overlay .sectionBlock img{
+    transition: all 0.2s ease-in;
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 80%;
+}
+
+.overlay .sectionBlock:hover{
+    cursor: pointer;
+    img{
+        transition: all 0.2s ease-in;
+        height: 48px;
+        width: 48px;
+        opacity: 100%;
+    }
+}
+  
+.overlay a:hover, .overlay a:focus {
+    opacity: 100%;
+}
+  
+.overlay img:not(.sectionBlock img){
+    transition: all 0.2s ease-in;
+    position: absolute;
+    height: 48px;
+    width: 48px;
+    opacity: 50%;
+    top: 15px;
+    right: 35px;
+    z-index: 2;
+}
+
+.overlay img:hover:not(.sectionBlock img){
+    transition: all 0.2s ease-in;
+    cursor: pointer;
+    opacity: 100%;
+}
+  
+@media screen and (max-height: 450px) {
+    .overlay .overlayContent a {font-size: 20px}
+    .overlay img {
+        height: 14px;
+        width: 14px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+/*header onder */
+
+main{
+  width: 100%;
+}
+
+.underHeader{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  flex-direction: row-reverse;
+  position: relative; 
+}
+
+.underHeader img{
+  width: 100%;
+  height: auto;
+}
+
+.overPicture {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center; 
+}
+
+.overPicture p{
+  color: white;
+  font-size: 50px;
+  font-weight: 600;
+}
+
+/* infobox */
+
+.containerMain{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(245, 245, 245);
+}
+
+.informationContainer{
+    margin: 0px 0px 5px 0px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    position: relative; 
+}
+
+.informationContainer h3 {
+    color: #004933;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 75px 100px 75px 100px;
+    background-color: #ffcc00;
+    transition: transform 0.3s ease;
+}
+
+.informationContainer h3:hover {
+    transform: translateY(-25px);
+    color: #ffcc00;
+    background-color: #004933;
+    text-decoration: underline;
+}
+
+.informationContainer img{
+    width: 50px;
+    height: auto;
+    position: absolute;
+    top: 10px; 
+    right: 10px; 
+    transition: transform 0.3s ease; 
+}
+
+.informationContainer h3:hover + img {
+    transform: translateY(-25px); 
+}
+
+/* image and texts*/
+
+.containerImageAndText{
+    scroll-snap-type: y mandatory;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 40px;
+    background-color: rgb(245, 245, 245);
+}
+
+.imageAndText{
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+}
+
+.imageAndText, .imageAndTextAlt {
+    scroll-snap-align: start none;
+    scroll-margin-block-start: 20px;
+    padding: 100px 200px 100px 200px;
+    border-radius: 5px;
+    p{
+        font-size: 20px;
+    }
+    h4{
+        font-size: 40px;
+    }
+}
+
+.imageAndText img:not(.readMoreContainer img), .imageAndTextAlt img:not(.readMoreContainer img){
+    transition: all 0.1s ease-in;
+    margin-left: 10px;
+    margin-right: 30px;
+    width: 600px;
+    height: auto;
+    border-radius: 2%;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+
+}
+
+.imageAndText img:hover, .imageAndTextAlt img:hover{
+    transition: all 0.3s ease-in;
+    transform: scale(1.05) translateX(-5px);
+    
+}
+
+.imageAndText p, .imageAndText h4{
+    color: #000000;
+}
+
+.imageAndTextAlt p, .imageAndTextAlt h4{
+    color: #004933;
+
+}
+
+.readMoreContainer{
+    display: flex;
+}
+
+.readMoreContainer p{
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+    color: #004933;
+    background-color: #ebbc00;
+    padding: 20px 30px;
+
+
+}
+
+.readMoreContainer p:hover{
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    color: #ebbc00;
+    background-color: #004933;
+    transform: translateY(-5px);
+}
+
+.readMoreContainerAlt{
+    display: flex;
+}
+
+
+.readMoreContainerAlt p{
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+    color: #ffcc00;
+    background-color: #004933;
+    padding: 20px 30px;
+
+
+}
+
+.readMoreContainerAlt p:hover{
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    color: #004933;
+    background-color: #ffcc00;
+    transform: translateY(-5px);
+}
+
+.secondaryText{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.secondaryText h3{
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.imageAndTextAlt{
+    display: flex;
+    flex-direction: row;
+    background-color: #ffcc00;
+    .text{
+        margin: 20px;
+
+        }
+
+}
+
+main{
+    background-color: rgb(245, 245, 245);
+}
+
+
+/* carousel */
+.carousel {
+    display: flex;
+    overflow: hidden;
+    width: 80%;
+    position: relative;
+    margin: auto;
+}
+
+.carouselItem {
+    min-width: 100%;
+    transition: transform 0.5s ease;
+    position: relative;
+    display: none;
+    margin-bottom: 10px;
+}
+
+.carouselItem img {
+    width: 100%;
+    height: auto;
+    max-height: 800px;
+}
+
+.overlayP {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.carouselItem.active {
+    display: block;
+}
+
+.carouselBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prevBtn {
+    left: 0;
+}
+
+.nextBtn {
+    right: 0;
+}
+
+/* headertext */
+
+.headerText{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.headerText span{
+    color: #ffcc00;
+}
+
+.headerText span:hover{
+    transition: transform 0.2s ease;
+    color: #004933;
+    transform: translateY(-25px);
+    background-color: #ffcc00;
+    box-shadow: 0 0 0 5px #ffcc00;
+}
+
+/* Footer */
+
+footer{
+    background-color: rgb(245, 245, 245);
+}
+
+.footerContainer{
+    background-color: #ffcc00;
+    color: #004933;
+    height: 200px;
+    width: 98%;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+}
+
+.textBox .textImg{
+    height: 34px;
+    width: auto;
+}
+
+
+.textBox{
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.textBox p{
+    display: flex;
+    justify-content: left;
+    text-align: left;
+}
+
+
+.textBox h1{
+    font-weight: bolder;
+}
+
+.clickAble{
+    padding: 3px;
+}
+
+.clickAble:hover{
+    text-decoration: underline;
+    cursor: pointer;
+    color: #ffcc00;
+    background-color: #004933;
+}
+
+/* footer2 */
+
+.footerContainer2{
+    background-color: #003dfe;
+    color: #f8a0bc;
+    height: 200px;
+    width: 98%;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+}
+
+.textBox2 .textImg2{
+    height: 34px;
+    width: auto;
+}
+
+
+.textBox2{
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.textBox2 p{
+    display: flex;
+    justify-content: left;
+    text-align: left;
+}
+
+
+.textBox2 h1{
+    font-weight: bolder;
+}
+
+.clickAble2{
+    padding: 3px;
+}
+
+.clickAble2:hover{
+    text-decoration: underline;
+    cursor: pointer;
+    color: #003dfe;
+    background-color: #f8a0bc;
+}
+
+
+
+
+/* scrollbar  */
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background-color: rgb(245, 245, 245);
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #ffcc00; 
+    border-radius: 3px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ebbc00; 
+  }
+
+
+/* your experience */
+.videoContainer{
+    background-color: rgb(245, 245, 245);
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    position: relative;
+}
+
+.videoContainer video{
+    width: 50%;
+}
+
+.videoContainer .textDivider{
+    width: 45%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
+.textDivider{
+    left: 0;
+    height: 100%;
+    background-color: #003dfe;
+    clip-path: polygon(0 0, 80% 0, 60% 100%, 0% 100%);
+}
+
+.continuationDivider{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 0;
+    right: 0;
+    width: 35%;
+    height: 100%;
+    background-color: #003dfe;
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 20% 0);
+}
+
+.textDivider h1{
+    font-weight: bolder;
+}
+
+
+
+
+/* voor telefoon */
+
+@media screen and (max-width: 768px) {
+    .buttonDiv {
+        height: auto;
+        width: 150%;
+        padding: 10px;
+        flex-direction: row;
+    }
+
+    .sectionBlock img{
+        display: none;
+    }
+
+    .imageLogo img {
+        height: 30px;
+        width: 80px;
+    }
+
+    .mainBar p {
+        font-size: 1em;
+        margin-left: 2px;
+    }
+
+    .overlay .sectionBlock a {
+        font-size: 20px;
+        padding: 50px;
+    }
+
+    .overlay .sectionBlock img {
+        height: 30px;
+        width: 30px;
+    }
+
+    .overlay img:not(.sectionBlock img) {
+        height: 30px;
+        width: 30px;
+    }
+
+    .underHeader img {
+        width: 100%;
+        height: auto;
+    }
+
+    .overPicture p {
+        font-size: 30px;
+    }
+
+    .informationContainer h3 {
+        font-size: 12px;
+        padding: 25px 20px;
+    }
+
+    .informationContainer img {
+        width: 15px;
+        height: auto;
+    }
+
+    .containerImageAndText {
+        padding: 20px;
+    }
+
+    .text{
+        margin-bottom: 10px;
+    }
+
+    .imageAndText, .imageAndTextAlt {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .imageAndText img, .imageAndTextAlt img {
+        width: 100% !important;
+        margin: 0;
+    }
+
+    .imageAndText p, .imageAndText h4, .imageAndTextAlt p, .imageAndTextAlt h4 {
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .footerContainer {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        width: 80%;
+    }
+
+    .textBox {
+        width: 100%;
+        align-items: center;
+    }
+
+    .textBox p {
+        font-size: 14px;
+    }
+
+    .textbox{
+        display: none;
+    }
+
+    .overPicture{
+        display: none;
+    }
+
+
+}
+

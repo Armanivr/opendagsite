@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <script src="js/main.js"></script>
+    <style>
+
+    </style>
+    <title>Curio</title>
+</head>
+<body>
+    <header>
+        <div class="buttonDiv">
+            <div class="imageLogo">
+                <img src="resources/img/curio_logo_wit.png" alt="curio">
+            </div>
+            <div class="mainBar" id="mainBar">
+                <img class="openBtn" onclick="openNav()" src="resources/icons/Menu.ico" alt="menu icon">
+                <p style="color: white;">menu</p>
+            </div>
+        </div>
+        <div id="myNav" class="overlay">
+            <img class="closeBtn" onclick="closeNav()" src="resources/icons/CloseWhite.ico" alt="close">
+        
+            <div class="overlayContent">
+                <div class="sectionBlock" style="background-color: #004933; margin-top: 20px;">
+                    <a style="color:#ffcc00 ;" href="index.html">Thuispagina</a>
+                    <img src="resources/icons/UpRightYellow.ico" alt="icon">
+                </div>
+                <div class="sectionBlock" style="background-color: #ffcc00;">
+                    <a style="color:#004933 ;" href="meet.html">Maak Kennis</a>
+                    <img src="resources/icons/UpRightGreen.ico" alt="icon">
+                </div>
+                <div class="sectionBlock" style="background-color: #004933;">
+                    <a style="color:#ffcc00" href="yourExperience.html">Jouw Ervaring</a>
+                    <img src="resources/icons/UpRightYellow.ico" alt="icon" >
+                </div>
+                <div class="sectionBlock" style="background-color: #ffcc00;" onclick="window.location.href='#contact'">
+                    <a style="color:#004933" onclick="lightUp()">Contact</a>
+                    <script>
+                        function lightUp() {
+                            const h1Element = document.querySelector('.textBox h1');
+                            setTimeout(() =>{
+                                h1Element.style.transition = 'color 0.3s ease';
+                                h1Element.style.color = '#038860';
+                            }, 900)
+                            setTimeout(() => {
+                                h1Element.style.color = '#004933';
+                            }, 2000);
+                        }
+                    </script>
+                    <img src="resources/icons/UpRightGreen.ico" alt="icon">
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="underHeader">
+            <img src="resources/img/SD_foto3.jpg" alt="underHeaderPicture">
+        </div> 
+        <div class="headerText">
+            <h1>Maak kennis met onze <span>docenten</span></h1>
+        </div>
+        <div class="carousel">
+            <button class="carouselBtn prevBtn" onclick="showPrevItem()" style="z-index: 1;">&#10094;</button>
+            <div class="carouselItem">
+                <img src="resources/img/teachers/michael.jpg" alt="Person 1">
+                <div class="overlayP">Michael - De opperpapa van de opleiding. Docent PRA.</div>
+            </div>
+            <div class="carouselItem">
+                <img src="resources/img/teachers/quincy.webp" alt="Person 2">
+                <div class="overlayP">Quincy - Quincy is kaal. Echt geen 1 haartje meer. Toffe kerel. Docent Native.</div>
+            </div>
+            <div class="carouselItem">
+                <img src="resources/img/teachers/ine.avif" alt="Person 3">
+                <div class="overlayP">Ine - Ine is echt super aardig. Docent Webdevelopment en mentor. Heeft een blog</div>
+            </div>
+            <div class="carouselItem">
+                <img src="resources/img/teachers/michel.webp" alt="Person 4">
+                <div class="overlayP">Michel - Underrated docent, hij is wel real. Docent Native.</div>
+            </div>
+            <div class="carouselItem">
+                <img src="resources/img/teachers/steven.avif"alt="Person 5">
+                <div class="overlayP">Steven - Lowkey beste docent voor web. Docent Webdevelopment, PRA en Codelab.</div>
+            </div>
+            <div class="carouselItem">
+                <img src="resources/img/teachers/armando.jpg" alt="Person 6">
+                <div class="overlayP">Armando - Wij hebben een haat-liefde relatie. Docent Native.</div>
+            </div>
+            <div class="carouselItem">
+                <img src="resources/img/teachers/bart.png" alt="Person 7">
+                <div class="overlayP">Bart - Hij denkt dat hij opperpapa is zoals Michael maar dat is niet zo. Hij is ginger. Docent Native. Noemde mij 'Goon' op insta.</div>
+            </div>
+            <div class="carouselItem">
+                <img src="resources/img/teachers/joep.jpg" alt="Person 8">
+                <div class="overlayP">Joep - Joep is echt 1 van de aardigste docenten. Zeker een top kerel. love naar Joep. Docent Nederlands.</div>
+            </div>
+            <div class="carouselItem">
+                <img src="resources/img/teachers/kasar.gif" alt="Person 9">
+                <div class="overlayP">Kasar - Echt de G.O.A.T, groot fan van bigidagoe. Hij is altijd chachi gekleed. Ik mag hem echt. Docent Engels.</div>
+            </div>
+            <div class="carouselItem">
+                <img src="resources/img/teachers/elton.jpg" alt="Person 10">
+                <div class="overlayP">Elton - Elton is elton. Ja ik weet echt serieus niet hoe je hem moet omschrijven. Docent WEB, Mentor enzo.</div>
+            </div>
+            <div class="carouselItem">
+                <img src="resources/img/teachers/fedde.webp" alt="Person 11">
+                <div class="overlayP">Fedde - Is hij eigenlijk wel docent? Naja hij is wel stoere man. Heel druk altijd.</div>
+            </div>
+            <button class="carouselBtn nextBtn" onclick="showNextItem()">&#10095;</button>
+        </div>
+        <script>
+            let currentIndex = 0;
+            const items = document.querySelectorAll('.carouselItem');
+            const itemCount = items.length;
+
+            function showNextItem() {
+                items[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % itemCount;
+                items[currentIndex].classList.add('active');
+            }
+
+            function showPrevItem() {
+                items[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex - 1 + itemCount) % itemCount;
+                items[currentIndex].classList.add('active');
+            }
+
+            items[currentIndex].classList.add('active');
+        </script>
+    </main>
+    <footer>
+        <div id="contact" class="footerContainer">
+            <div class="textBox">
+                <img class=textImg src="resources/img/curio_logo_groen.png" alt="">
+                <p>Curio Breda</p>
+                <p>Software Development</p>
+                <p>Terheijdenseweg 350, Breda</p>
+            </div>
+            <div class="textBox" id="contact">
+                <h1>Contact</h1>
+                <p class= "clickAble" onclick="window.location.href='mailto:infopunt@curio.nl'">infopunt@curio.nl</p>
+                <p class="clickAble" onclick="window.location.href='tel:088-2098000'">088-2098000</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
